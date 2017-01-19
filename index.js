@@ -20,7 +20,17 @@
  var monthlyRate = "";
  var total = "";
 
- database.ref().on("value", function(snapshot) {
+
+database.ref("/employeedirectory").set({
+		employeeName: employeeName,
+		role: role,
+		startDate: startDate,
+		monthsWorked: monthsWorked,
+		monthlyRate: monthlyRate,
+		total: total
+	});
+
+ database.ref("/employeedirectory").on("value", function(snapshot) {
 
 $("#employeeName").html(employeeName);
 $("#role").html(role);
@@ -28,7 +38,6 @@ $("#startDate").html(startDate);
 $("#monthlyRate").html(monthlyRate);
 $("#monthsWorked").hmtl(monthsWorked);
 $("#total").html(total); 
-
 
 
 $("#submit").on("click", function(event) {
@@ -55,17 +64,17 @@ newTableRow.append(newTableMonthlyRate);
 newTableRow.append(newTableMonthsWorked);
 newTableRow.append(newTableTotal);
 
+
+// database.ref("/employeedirectory").push({
+// 		employeeName: employeeName,
+// 		role: role,
+// 		startDate: startDate,
+// 		monthsWorked: monthsWorked,
+// 		monthlyRate: monthlyRate,
+// 		total: total
+// 	});
 $("#employeeTable").append(newTableRow);
 console.log(newTableRow);
-
-database.ref().push({
-		employeeName: employeeName,
-		role: role,
-		startDate: startDate,
-		monthsWorked: monthsWorked,
-		monthlyRate: monthlyRate,
-		total: total
-	});
 
 });
 
