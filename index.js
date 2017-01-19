@@ -28,7 +28,7 @@ $("#startDate").html(startDate);
 $("#monthlyRate").html(monthlyRate);
 $("#monthsWorked").hmtl(monthsWorked);
 $("#total").html(total); 
- 
+
 
 
 $("#submit").on("click", function(event) {
