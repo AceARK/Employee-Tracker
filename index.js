@@ -44,10 +44,10 @@ $("#submit").on("click", function(event) {
 	event.preventDefault();
 	employeeName = $("#employeeName").val();
 	role = $("#role").val();
-	startDate = parseInt($("#startDate").val());
-	monthlyRate = parseInt($("#monthlyRate").val());
-	monthsWorked = parseInt($("#monthsWorked").val());
-	total = parseInt($("#total").val());
+	startDate = $("#startDate").val();
+	monthlyRate = $("#monthlyRate").val();
+	monthsWorked = $("#monthsWorked").val();
+	total = $("#total").val();
 
 var newTableRow = $("<tr>");
 var newTableEmployeeName = $("<td>" + employeeName + "</td>"); 
